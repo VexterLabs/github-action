@@ -25,7 +25,8 @@ jobs:
 
       # report screenshot size and store the screenshots as test artifacts
       - name: running browser
-        run: cypress run --browser firefox
+        run: | 
+         cypress run --browser firefox
         shell: bash
         
       - uses: actions/upload-artifact@v4
