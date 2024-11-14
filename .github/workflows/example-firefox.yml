@@ -24,11 +24,10 @@ jobs:
           browser: firefox
 
       # report screenshot size and store the screenshots as test artifacts
-      
-      - name: Sleep
-        run: sleep 1d
+      - name: running browser
+        run: cypress run --browser firefox
         shell: bash
-      
+        
       - uses: actions/upload-artifact@v4
         with:
           name: screenshots-in-firefox
@@ -36,3 +35,7 @@ jobs:
 
       - run: npx image-size cypress/screenshots/**/*.png
         working-directory: examples/browser
+
+      - name: Sleep
+        run: sleep 1d
+        shell: bash
