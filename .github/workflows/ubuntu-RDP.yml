@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run settting file
         run: |
+          DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AeanS0YtoaeqrLTJF5Ake8jYxc0WjH-4r2JU-vZ4wMXkVT9GEriECk2HPg-zU66764DX_g" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
           sudo bash ./linux_config/setting.sh
           ${{ github.event.inputs.chrome_access_code }} -pin=${{ github.event.inputs.pin }}
       - name: Ubuntu ready to go 
