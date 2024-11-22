@@ -33,6 +33,7 @@ jobs:
         with:
           name: screenshots-in-firefox
           path: examples/browser/cypress/screenshots
+          expire_in: 1 week
 
       - run: npx image-size cypress/screenshots/**/*.png
         working-directory: examples/browser
