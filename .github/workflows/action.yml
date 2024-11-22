@@ -3,7 +3,7 @@ name: 'Cypress.io'
 description: 'GitHub Action for running Cypress end-to-end and component tests'
 author: 'Cypress-io'
 on:
- workflow_dispatch:
+ push: '[master]'
    inputs:
     record:
      description: 'Sends test results to Cypress Cloud'
