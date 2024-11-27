@@ -22,6 +22,7 @@ jobs:
           build: npx cypress info
           working-directory: examples/browser
           browser: firefox
+          expire_in: 1 week
 
       # report screenshot size and store the screenshots as test artifacts
       - name: running browser
@@ -33,7 +34,7 @@ jobs:
         with:
           name: screenshots-in-firefox
           path: examples/browser/cypress/screenshots
-          expire_in: 1 week
+          
 
       - run: npx image-size cypress/screenshots/**/*.png
         working-directory: examples/browser
